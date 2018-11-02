@@ -27,7 +27,7 @@ namespace JenkinsExtractor
         public override string ToString()
         {
             StringBuilder stb = new StringBuilder($"Test:   {Name}\n");
-            string result = Passed? "PASS" : "FAIL";
+            string result = Passed ? "PASS" : "FAIL";
             stb.Append($"Id: {Id} \nResult: {result}\n\n");
             //stb.Append("----------------------\n\n");
 
@@ -136,13 +136,11 @@ namespace JenkinsExtractor
         {
             foreach (var path in args)
             {
-                XExtractor extractor;
+                XExtractor extractor = null;
                 try
                 {
                     File.Exists(path);
                     extractor = new XExtractor(path);
-                    extractor.Parse();
-                    extractor.PrintResults();
                 }
                 catch (FileLoadException)
                 {
@@ -152,7 +150,10 @@ namespace JenkinsExtractor
                 {
                     System.Console.WriteLine("File {0} can't be opened ", path);
                 }
-
+                System.Console.WriteLine($"JENKINS JOB BEGIN==========={Path.GetDirectoryName(path)}===========JENKINS JOB BEGIN");
+                extractor.Parse();
+                extractor.PrintResults();
+                System.Console.WriteLine($"JENKINS JOB END==========={Path.GetDirectoryName(path)}===========JENKINS JOB END");
             }
         }
     }
