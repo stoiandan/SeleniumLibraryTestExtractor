@@ -78,8 +78,11 @@ namespace JenkinsExtractor
 
         readonly XElement root;
 
+        readonly string path;
+
         public XExtractor(string path)
         {
+            this.path = path;
             document = XDocument.Load(path);
             root = document.Root;
         }
@@ -128,13 +131,15 @@ namespace JenkinsExtractor
 
         public void WriteResults(string outputPath)
         {
-                using (StreamWriter writer = new StreamWriter(outputPath))
+            using (StreamWriter writer = new StreamWriter(outputPath, true))
+            {
+                writer.Write($"JENKINS JOB BEGIN==========={Path.GetDirectoryName(path)}===========JENKINS JOB BEGIN");
+                foreach (var suite in Suites)
                 {
-                    foreach(var suite in Suites)
-                    {
-                        writer.Write(suite);
-                    }
+                    writer.Write(suite);
                 }
+                writer.Write($"JENKINS JOB END==========={Path.GetDirectoryName(path)}===========JENKINS JOB END");
+            }
         }
     }
     class Program
@@ -148,7 +153,14 @@ namespace JenkinsExtractor
         {
 
             string outputPath = null;
-            outputPath = args.SkipWhile(x => x != "-o").Skip(1).First();
+            try
+            {
+                outputPath = args.SkipWhile(x => x != "-o").Skip(1).First();
+            }
+            catch (Exception)
+            {
+                outputPath = "output.txt";
+            }
 
             foreach (var path in args.TakeWhile(x => x != "-o").Concat(args.SkipWhile(x => x != "-o").Skip(2)))
             {
@@ -168,7 +180,7 @@ namespace JenkinsExtractor
                 }
                 System.Console.WriteLine($"JENKINS JOB BEGIN==========={Path.GetDirectoryName(path)}===========JENKINS JOB BEGIN");
                 extractor.Parse();
-
+                extractor.WriteResults(outputPath);
                 extractor.PrintResults();
                 System.Console.WriteLine($"JENKINS JOB END==========={Path.GetDirectoryName(path)}===========JENKINS JOB END");
             }
