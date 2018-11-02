@@ -125,16 +125,32 @@ namespace JenkinsExtractor
                 System.Console.WriteLine(suite);
             }
         }
+
+        public void WriteResults(string outputPath)
+        {
+                using (StreamWriter writer = new StreamWriter(outputPath))
+                {
+                    foreach(var suite in Suites)
+                    {
+                        writer.Write(suite);
+                    }
+                }
+        }
     }
     class Program
     {
         /*
-         *  args shall be an string array of paths to XML Jenkins test results files 
+         *  args will pass as argument an string array of paths to XML Jenkins test results files 
+         *  the output files location will be specified with "-o outputfile"
          *  POSIX complient
          */
         static void Main(string[] args)
         {
-            foreach (var path in args)
+
+            string outputPath = null;
+            outputPath = args.SkipWhile(x => x != "-o").Skip(1).First();
+
+            foreach (var path in args.TakeWhile(x => x != "-o").Concat(args.SkipWhile(x => x != "-o").Skip(2)))
             {
                 XExtractor extractor = null;
                 try
@@ -152,9 +168,11 @@ namespace JenkinsExtractor
                 }
                 System.Console.WriteLine($"JENKINS JOB BEGIN==========={Path.GetDirectoryName(path)}===========JENKINS JOB BEGIN");
                 extractor.Parse();
+
                 extractor.PrintResults();
                 System.Console.WriteLine($"JENKINS JOB END==========={Path.GetDirectoryName(path)}===========JENKINS JOB END");
             }
+
         }
     }
 }

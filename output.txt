@@ -1,0 +1,171 @@
+JENKINS JOB BEGIN===========..\JenkinsExtractor===========JENKINS JOB BEGIN
+SUITE BEGIN===========SkylabX Tests Job3===========SUITE BEGIN
+
+Test:   Check Document Content Clicking On Each Toc Item
+Id: Doc1 
+Result: PASS
+
+Test:   Check Navigation Between 2 Topics From The Same Document
+Id: Doc2 
+Result: PASS
+
+Test:   Check The Jump To Anchors Inside Of Same Topic
+Id: Doc3 
+Result: PASS
+
+Test:   Check Navigation Between 2 Topics From Different Documents
+Id: Doc4 
+Result: PASS
+
+Test:   Check Switching Between Available Releases
+Id: Doc7 
+Result: PASS
+
+Test:   Check Expand/Colapse Item Functionality When In Toc There Are More Than 2 Levels Of Items
+Id: Doc10 
+Result: PASS
+
+Test:   Check Error Message Displayed When A Document Is No Longer Available Or The URL Is Wrong
+Id: Doc11 
+Result: PASS
+
+Test:   Check That Topic Chronicle Id Displayed On URL Is The Same As The One Displayed In The Nav Bar
+Id: Doc15 
+Result: PASS
+
+Test:   Check Error Message Displayed When A Fake Chronicle Id Is Used
+Id: Doc16 
+Result: PASS
+
+Test:   Check Context Search Functionality At Document Level
+Id: Doc17 
+Result: PASS
+
+Test:   Check Navigation From Document View To Search View Using Back Button From Browser
+Id: Doc6 
+Result: PASS
+
+Test:   Check Copy/Paste Document Url In Other Tab/Window Of Browser
+Id: Doc8 
+Result: PASS
+
+Test:   Check Different Possible Links Between Topics
+Id: Doc9 
+Result: PASS
+
+Test:   Check Pdf Mapping With HTML Documents When Both Formats Are Available&Compatible
+Id: Doc12 
+Result: PASS
+
+Test:   Check Pdf Mapping With HTML Documents When Both Formats Are Available But Incompatible
+Id: Doc13 
+Result: PASS
+
+Test:   Check Pdf Mapping with HTML Documents When Only HTML Format Is Available
+Id: Doc14 
+Result: PASS
+
+Test:   Check Release Drop Down List Items When CV ChronicleId Is Empty
+Id: Doc18 
+Result: PASS
+
+Test:   Check That Dummy Chronicle IDs Are Not Displayed
+Id: Doc19 
+Result: PASS
+
+SUITE END==============SkylabX Tests Job3==============SUITE END
+
+
+SUITE BEGIN===========DocumentView suite1===========SUITE BEGIN
+
+Test:   Check Document Content Clicking On Each Toc Item
+Id: Doc1 
+Result: PASS
+
+Test:   Check Navigation Between 2 Topics From The Same Document
+Id: Doc2 
+Result: PASS
+
+Test:   Check The Jump To Anchors Inside Of Same Topic
+Id: Doc3 
+Result: PASS
+
+Test:   Check Navigation Between 2 Topics From Different Documents
+Id: Doc4 
+Result: PASS
+
+Test:   Check Switching Between Available Releases
+Id: Doc7 
+Result: PASS
+
+Test:   Check Expand/Colapse Item Functionality When In Toc There Are More Than 2 Levels Of Items
+Id: Doc10 
+Result: PASS
+
+Test:   Check Error Message Displayed When A Document Is No Longer Available Or The URL Is Wrong
+Id: Doc11 
+Result: PASS
+
+Test:   Check That Topic Chronicle Id Displayed On URL Is The Same As The One Displayed In The Nav Bar
+Id: Doc15 
+Result: PASS
+
+Test:   Check Error Message Displayed When A Fake Chronicle Id Is Used
+Id: Doc16 
+Result: PASS
+
+Test:   Check Context Search Functionality At Document Level
+Id: Doc17 
+Result: PASS
+
+SUITE END==============DocumentView suite1==============SUITE END
+
+
+SUITE BEGIN===========DocumentView suite2===========SUITE BEGIN
+
+Test:   Check Navigation From Document View To Search View Using Back Button From Browser
+Id: Doc6 
+Result: PASS
+
+Test:   Check Copy/Paste Document Url In Other Tab/Window Of Browser
+Id: Doc8 
+Result: PASS
+
+Test:   Check Different Possible Links Between Topics
+Id: Doc9 
+Result: PASS
+
+SUITE END==============DocumentView suite2==============SUITE END
+
+
+SUITE BEGIN===========DocumentView suite3===========SUITE BEGIN
+
+Test:   Check Pdf Mapping With HTML Documents When Both Formats Are Available&Compatible
+Id: Doc12 
+Result: PASS
+
+Test:   Check Pdf Mapping With HTML Documents When Both Formats Are Available But Incompatible
+Id: Doc13 
+Result: PASS
+
+Test:   Check Pdf Mapping with HTML Documents When Only HTML Format Is Available
+Id: Doc14 
+Result: PASS
+
+SUITE END==============DocumentView suite3==============SUITE END
+
+
+SUITE BEGIN===========DocumentView suite4===========SUITE BEGIN
+
+Test:   Check Release Drop Down List Items When CV ChronicleId Is Empty
+Id: Doc18 
+Result: PASS
+
+Test:   Check That Dummy Chronicle IDs Are Not Displayed
+Id: Doc19 
+Result: PASS
+
+SUITE END==============DocumentView suite4==============SUITE END
+
+
+JENKINS JOB END===========..\JenkinsExtractor===========JENKINS JOB END
