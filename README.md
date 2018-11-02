@@ -1,2 +1,2 @@
-# SeleniumLibraryTestExtractor
-Tool writen in .NET Core (cross-platform) to extract test results from Robot Framework (SeleniumLibrary) xml files
+# JenkinsTestResultsExtractor
+Tool that extract Robot Framework test results from xml output files. It was developed in order to extract test results from Jenkins jobs.
